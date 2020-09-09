@@ -1,0 +1,25 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "cloudhsm:ListHapgs",
+                "sagemaker:ListApps",
+                "codestar:DescribeUserProfile",
+                "secretsmanager:DescribeSecret",
+                "secretsmanager:GetSecretValue",
+                "cloudhsm:ListAvailableZones",
+                "codestar:ListProjects",
+                "sagemaker:ListModels",
+                "codestar:CreateUserProfile",
+                "cloudhsm:GetConfig",
+                "cloudhsm:ListHsms",
+                "cloudhsm:DescribeHsm",
+                "sagemaker:ListUserProfiles"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
