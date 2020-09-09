@@ -35,7 +35,7 @@ As of 09/09/2020 there exists a vulnerability in the AWS API that allows you to 
 ## Steps to Reproduce
 The vulnerability only affects AWS services that use POST requests and the X-Amz-Target header (Each AWS API has different implementations. Some use GET requests, some POST to an API endpoint, etc). The majority of these services require the Content-Type header to be 'application/x-amz-json-1.1'. In the majority of instances, sending 'application/x-amz-json-1.0' will provide you with an error; typically 404 - 'UnknownOperationException' or 500 - 'InternalFailure'.
 
-However, on the services listed above you instead will get a 403 response if you do not have permission to call the API. If the role does have permission to call the API you instead get a 404. Seemingly, because of this header none of this traffic is sent to CloudTrail, meaning you can enumerate whether or not a given role has privileges to make the API call without that reconaisance being logged.
+However, on the services listed above you instead will get a 403 response if you do not have permission to call the API. If the role does have permission to call the API you instead get a 404. Seemingly, because of this header none of this traffic is sent to CloudTrail, meaning you can enumerate whether or not a given role has privileges to make the API call without that reconnaissance being logged.
 
 There are some caveats that should be noted, however. Let's take Secrets Manager for example. Within Secrets Manager there are two API calls which automatically set their value to resource:\*, those are secretsmanager:ListSecrets and secretsmanager:GetRandomPassword. 
 
@@ -79,6 +79,8 @@ For whatever reason, when parsing the API query given the Content-Type: x-amz-js
 
 ## Proof of Concept
 If you would like to test this for yourself, create a role with the example policy (in this repo) and then create the temporary credentials to assume the role (don't forget to set them in your environment variables). From there, run the proof of concept script, and it will determine what permissions you do and do not have access to. Wait 15-30 minutes, and then confirm that those API calls were not tracked in CloudTrail.
+
+Please note, the tool has a list of API calls it checks. It will not enumerate every single API call for each vulnerable API service.
 
 ![Output](https://frichetten.com/images/misc/aws_stealth_enum/output.png)
 
