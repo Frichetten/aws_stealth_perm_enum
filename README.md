@@ -37,4 +37,40 @@ The vulnerability only affects AWS services that use POST requests and the X-Amz
 
 However, on the services listed above you instead will get a 403 response if you do not have permission to call the API. If the role does have permission to call the API you instead get a 404. Seemingly, because of this header none of this traffic is sent to CloudTrail, meaning you can enumerate whether or not a given role has privileges to make the API call without that reconaisance being logged.
 
-There are some caveats that should be noted, however. Let's take Secrets Manager for example. 
+There are some caveats that should be noted, however. Let's take Secrets Manager for example. Within Secrets Manager there are two API calls which automatically set their value to resource:\*, those are secretsmanager:ListSecrets and secretsmanager:GetRandomPassword. 
+
+Now, if you use the vulnerability without your current role having permissions to call the secretsmanager:ListSecrets action you will get a 403 response as shown below.
+
+IMAGE 403 response.
+
+However, if you modify the IAM policy to include privileges for these two actions, it will default to resource:\*, and give you the following text.
+ 
+IMAGE the actions you chose support all resources
+
+And when rendered via JSON you get the following.
+
+IMAGE showing permissions.
+
+After allowing those permissions to take effect, if you run the same script again, you will receive a 404 response as shown below.
+
+IMAGE 404 response
+
+Depending on the 403 or 404 response you will know whether or not the role has permission to call the secretsmanager:ListSecrets action. There are many AWS API call's which only work with resource:\*, these are just two.
+
+For more specific actions let's look at secretsmanager:GetSecretValue.
+
+If the role does not have this permission, and we make the request we will get a 403 response (regardless of whether or not the secret id is real or not).
+
+IMAGE 403 get secret
+
+If you do provide the role the IAM permissions to get a specific secret, and then query that specific secret or one that does not exists, you will still get a 403 response.
+
+IMAGE 403 get secret
+
+However, if you instead modify the IAM policy to allow resource:\* as shown below...
+
+IMAGE IAM resource *
+
+You will get a 404 response.
+
+For whatever reason, when parsing the API query given the Content-Type: x-amz-json-1.0 header, the API service will return different response codes allowing us to determine our IAM permissions without logging to CloudTrail. From an attackers perspective, if you get a 404 response, you know the IAM action and whether or not the resource is set to \*.
