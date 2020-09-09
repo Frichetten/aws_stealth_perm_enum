@@ -105,7 +105,6 @@ def make_call(service_target, action):
         print("You do not have permissions to call %s:%s" % (service,action))
     elif r.status_code == 404:
         print("You have permissions to call %s:%s" % (service,action))
-    print(r.text)
 
 
 access_key = os.environ.get('AWS_ACCESS_KEY_ID')
