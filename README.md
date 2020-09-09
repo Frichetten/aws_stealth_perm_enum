@@ -41,19 +41,19 @@ There are some caveats that should be noted, however. Let's take Secrets Manager
 
 Now, if you use the vulnerability without your current role having permissions to call the secretsmanager:ListSecrets action you will get a 403 response as shown below.
 
-IMAGE 403 response.
+![403 response](https://frichetten.com/images/misc/aws_stealth_enum/403_res_1.png)
 
 However, if you modify the IAM policy to include privileges for these two actions, it will default to resource:\*, and give you the following text.
  
-IMAGE the actions you chose support all resources
+![The actions you chose support all resources](https://frichetten.com/images/misc/aws_stealth_enum/resources.png)
 
 And when rendered via JSON you get the following.
 
-IMAGE showing permissions.
+![Showing permissions.](https://frichetten.com/images/misc/aws_stealth_enum/iam_perms_1.png)
 
 After allowing those permissions to take effect, if you run the same script again, you will receive a 404 response as shown below.
 
-IMAGE 404 response
+![404 response](https://frichetten.com/images/misc/aws_stealth_enum/404_res_1.png)
 
 Depending on the 403 or 404 response you will know whether or not the role has permission to call the secretsmanager:ListSecrets action. There are many AWS API call's which only work with resource:\*, these are just two.
 
@@ -61,16 +61,18 @@ For more specific actions let's look at secretsmanager:GetSecretValue.
 
 If the role does not have this permission, and we make the request we will get a 403 response (regardless of whether or not the secret id is real or not).
 
-IMAGE 403 get secret
+![403 get secret](https://frichetten.com/images/misc/aws_stealth_enum/403_res_2.png)
 
-If you do provide the role the IAM permissions to get a specific secret, and then query that specific secret or one that does not exists, you will still get a 403 response.
+If you do provide the role the IAM permissions to get a specific secret, and then query that specific secret or one that does not exist, you will still get a 403 response. Because of this, if the IAM policy is locked to a specific ARN, you will not be able to enumerate the permission using this method.
 
-IMAGE 403 get secret
+![403 get secret](https://frichetten.com/images/misc/aws_stealth_enum/403_res_2.png)
 
 However, if you instead modify the IAM policy to allow resource:\* as shown below...
 
-IMAGE IAM resource *
+![IAM Resources](https://frichetten.com/images/misc/aws_stealth_enum/iam_perms_2.png)
 
 You will get a 404 response.
+
+![404 response](https://frichetten.com/images/misc/aws_stealth_enum/404_res_2.png)
 
 For whatever reason, when parsing the API query given the Content-Type: x-amz-json-1.0 header, the API service will return different response codes allowing us to determine our IAM permissions without logging to CloudTrail. From an attackers perspective, if you get a 404 response, you know the IAM action and whether or not the resource is set to \*.
