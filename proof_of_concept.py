@@ -12,7 +12,6 @@ import requests # pip install requests
 services = {
         "secretsmanager": [
             "secretsmanager.GetSecretValue",
-            "secretsmanager.GetSecretValue",
             "secretsmanager.DescribeSecret",
             "secretsmanager.GetRandomPassword",
             "secretsmanager.PutSecretValue"
@@ -24,33 +23,22 @@ services = {
             "CloudHsmFrontendService.ListLunaClients",
             "CloudHsmFrontendService.DescribeHsm",
             "CloudHsmFrontendService.GetConfig",
-            "CloudHsmFrontendService.CreateHapg",
-            "CloudHsmFrontendService.ModifyHsm"
+            "CloudHsmFrontendService.CreateHapg"
             ],
         "cloudhsmv2": [
             "BaldrApiService.DescribeBackups",
             "BaldrApiService.DescribeClusters"
             ],
         "kinesis": [
-            "Kinesis_20131202.ListShards",
-            "Kinesis_20131202.ListStreams",
-            "Kinesis_20131202.CreateStream"
+            "Kinesis_20131202.ListStreams"
             ],
         "api.sagemaker": [
-            "SageMaker.ListApps",
             "SageMaker.ListTrainingJobs",
-            "SageMaker.ListUserProfiles",
             "SageMaker.ListModels"
-            ],
-        "health": [
-            "AWSHealth_20160804.DescribeEvents",
-            "AWSHealth_20160804.DescribeEventAggregates",
-            "AWSHealth_20160804.DescribeEventTypes"
             ],
         "codestar": [
             "CodeStar_20170419.ListProjects",
-            "CodeStar_20170419.DescribeUserProfile",
-            "CodeStar_20170419.CreateUserProfile"
+            "CodeStar_20170419.DescribeUserProfile"
             ]
     }
 
@@ -117,6 +105,7 @@ def make_call(service_target, action):
         print("You do not have permissions to call %s:%s" % (service,action))
     elif r.status_code == 404:
         print("You have permissions to call %s:%s" % (service,action))
+    print(r.text)
 
 
 access_key = os.environ.get('AWS_ACCESS_KEY_ID')
