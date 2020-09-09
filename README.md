@@ -76,3 +76,10 @@ You will get a 404 response.
 ![404 response](https://frichetten.com/images/misc/aws_stealth_enum/404_res_2.png)
 
 For whatever reason, when parsing the API query given the Content-Type: x-amz-json-1.0 header, the API service will return different response codes allowing us to determine our IAM permissions without logging to CloudTrail. From an attackers perspective, if you get a 404 response, you know the IAM action and whether or not the resource is set to \*.
+
+## Proof of Concept
+If you would like to test this for yourself, create a role with the example policy (in this repo) and then create the temporary credentials to assume the role (don't forget to set them in your environment variables). From there, run the proof of concept script, and it will determine what permissions you do and do not have access to. Wait 15-30 minutes, and then confirm that those API calls were not tracked in CloudTrail.
+
+![Output](https://frichetten.com/images/misc/aws_stealth_enum/output.png)
+
+![Not in CloudTrail](https://frichetten.com/images/misc/aws_stealth_enum/no_cloudtrail.png)
