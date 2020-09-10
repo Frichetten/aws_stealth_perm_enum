@@ -4,33 +4,48 @@ Research on the enumeration of IAM permissions without logging to CloudTrail
 ## tl;dr
 As of 09/09/2020 there exists a vulnerability in the AWS API that allows you to enumerate some IAM permissions for a role without logging to CloudTrail. This capability is due to improper handling of the Content-Type header which is important for the AWS API. The vulnerability has been reported to the AWS Security Team and in the event that it is patched, here are all the details of said vulnerability. It currently affects the following AWS services.
 
-* secretsmanager
-* sagemaker
-* route53domains
-* workmail
-* shield
-* cur (Cost and Usage Reports)
-* comprehend
-* cloudhsm
-* autoscaling-plans
 * application-autoscaling
-* datapipeline
+* appstream
+* athena
+* autoscaling-plans
+* aws-marketplace
+* cloudhsm
+* codecommit
 * codepipeline
 * codestar
-* budgets
-* sms (Server Migration Service)
-* support
-* kinesis
-* kinesisanalytics
-* macie
+* comprehend
+* cur
+* datapipeline
+* dax
+* directconnect
+* discovery
 * forecast
 * gamelift
 * health
-* dax (DynamoDB DB Accelerator)
-* directconnect
-* discovery
+* identitystore
+* kinesis
+* kinesisanalytics
+* macie
+* mediastore
+* mgh
+* mturk-requester
+* opsworks-cm
+* personalize
+* redshift-data
+* route53domains
+* route53resolver
+* sagemaker
+* secretsmanager
+* shield
+* sms
+* snowball
+* support
+* tagging
 * textract
 * translate
+* workmail
+
+Note: not all API calls for these services are vulnerable. For a complete list of every vulnerable API call please see /enum_all_api_calls/final-vuln-api-list.txt.
 
 ## Steps to Reproduce
 The vulnerability only affects AWS services that use POST requests and the X-Amz-Target header (Each AWS API has different implementations. Some use GET requests, some POST to an API endpoint, etc). The majority of these services require the Content-Type header to be 'application/x-amz-json-1.1'. In the majority of instances, sending 'application/x-amz-json-1.0' will provide you with an error; typically 404 - 'UnknownOperationException' or 500 - 'InternalFailure'.
