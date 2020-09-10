@@ -6,13 +6,18 @@
             "Effect": "Allow",
             "Action": [
                 "cloudhsm:ListHapgs",
-                "codestar:DescribeUserProfile",
+                "appstream:DisableUser",
                 "secretsmanager:DescribeSecret",
+                "codestar:DescribeUserProfile",
+                "appstream:DeleteUser",
                 "secretsmanager:GetSecretValue",
                 "cloudhsm:ListAvailableZones",
+                "appstream:CreateUser",
+                "appstream:EnableUser",
                 "codestar:ListProjects",
                 "sagemaker:ListModels",
                 "cloudhsm:GetConfig",
+                "cloudhsm:ListHsms",
                 "cloudhsm:DescribeHsm"
             ],
             "Resource": "*"
