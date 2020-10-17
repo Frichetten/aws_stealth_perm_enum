@@ -1,5 +1,5 @@
 {
-  "application-autoscaling:application-autoscaling": [
+  "application-autoscaling:application-autoscaling:404": [
     "AnyScaleFrontendService.DeleteScalingPolicy",
     "AnyScaleFrontendService.DeleteScheduledAction",
     "AnyScaleFrontendService.DeregisterScalableTarget",
@@ -10,7 +10,7 @@
     "AnyScaleFrontendService.PutScalingPolicy",
     "AnyScaleFrontendService.PutScheduledAction"
   ],
-  "appstream:appstream2": [
+  "appstream:appstream2:404": [
     "PhotonAdminProxyService.CreateDirectoryConfig",
     "PhotonAdminProxyService.CreateUsageReportSubscription",
     "PhotonAdminProxyService.CreateUser",
@@ -27,11 +27,11 @@
     "PhotonAdminProxyService.ExpireSession",
     "PhotonAdminProxyService.UpdateDirectoryConfig"
   ],
-  "athena:athena": [
+  "athena:athena:404": [
     "AmazonAthena.ListDataCatalogs",
     "AmazonAthena.ListWorkGroups"
   ],
-  "autoscaling-plans:autoscaling-plans": [
+  "autoscaling-plans:autoscaling-plans:404": [
     "AnyScaleScalingPlannerFrontendService.CreateScalingPlan",
     "AnyScaleScalingPlannerFrontendService.DeleteScalingPlan",
     "AnyScaleScalingPlannerFrontendService.DescribeScalingPlanResources",
@@ -39,16 +39,16 @@
     "AnyScaleScalingPlannerFrontendService.GetScalingPlanResourceForecastData",
     "AnyScaleScalingPlannerFrontendService.UpdateScalingPlan"
   ],
-  "aws-marketplace:entitlement.marketplace": [
+  "aws-marketplace:entitlement.marketplace:404": [
     "AWSMPEntitlementService.GetEntitlements"
   ],
-  "aws-marketplace:metering.marketplace": [
+  "aws-marketplace:metering.marketplace:500": [
     "AWSMPMeteringService.BatchMeterUsage",
     "AWSMPMeteringService.MeterUsage",
     "AWSMPMeteringService.RegisterUsage",
     "AWSMPMeteringService.ResolveCustomer"
   ],
-  "cloudhsm:cloudhsm": [
+  "cloudhsm:cloudhsm:404": [
     "CloudHsmFrontendService.AddTagsToResource",
     "CloudHsmFrontendService.CreateHapg",
     "CloudHsmFrontendService.CreateHsm",
@@ -69,11 +69,11 @@
     "CloudHsmFrontendService.ModifyLunaClient",
     "CloudHsmFrontendService.RemoveTagsFromResource"
   ],
-  "cloudhsm:cloudhsmv2": [
+  "cloudhsm:cloudhsmv2:500": [
     "BaldrApiService.DescribeBackups",
     "BaldrApiService.DescribeClusters"
   ],
-  "codecommit:codecommit": [
+  "codecommit:codecommit:404": [
     "CodeCommit_20150413.CreateApprovalRuleTemplate",
     "CodeCommit_20150413.DeleteApprovalRuleTemplate",
     "CodeCommit_20150413.GetApprovalRuleTemplate",
@@ -84,7 +84,7 @@
     "CodeCommit_20150413.UpdateApprovalRuleTemplateDescription",
     "CodeCommit_20150413.UpdateApprovalRuleTemplateName"
   ],
-  "codepipeline:codepipeline": [
+  "codepipeline:codepipeline:404": [
     "CodePipeline_20150709.AcknowledgeJob",
     "CodePipeline_20150709.AcknowledgeThirdPartyJob",
     "CodePipeline_20150709.GetJobDetails",
@@ -97,12 +97,12 @@
     "CodePipeline_20150709.PutThirdPartyJobFailureResult",
     "CodePipeline_20150709.PutThirdPartyJobSuccessResult"
   ],
-  "codestar:codestar": [
+  "codestar:codestar:404": [
     "CodeStar_20170419.DescribeUserProfile",
     "CodeStar_20170419.ListProjects",
     "CodeStar_20170419.ListUserProfiles"
   ],
-  "comprehend:comprehend": [
+  "comprehend:comprehend:500": [
     "Comprehend_20171127.BatchDetectDominantLanguage",
     "Comprehend_20171127.BatchDetectEntities",
     "Comprehend_20171127.BatchDetectKeyPhrases",
@@ -122,11 +122,13 @@
     "Comprehend_20171127.DescribeEntitiesDetectionJob",
     "Comprehend_20171127.DescribeEntityRecognizer",
     "Comprehend_20171127.DescribeKeyPhrasesDetectionJob",
+    "Comprehend_20171127.DescribePiiEntitiesDetectionJob",
     "Comprehend_20171127.DescribeSentimentDetectionJob",
     "Comprehend_20171127.DescribeTopicsDetectionJob",
     "Comprehend_20171127.DetectDominantLanguage",
     "Comprehend_20171127.DetectEntities",
     "Comprehend_20171127.DetectKeyPhrases",
+    "Comprehend_20171127.DetectPiiEntities",
     "Comprehend_20171127.DetectSentiment",
     "Comprehend_20171127.DetectSyntax",
     "Comprehend_20171127.ListDocumentClassificationJobs",
@@ -136,6 +138,7 @@
     "Comprehend_20171127.ListEntitiesDetectionJobs",
     "Comprehend_20171127.ListEntityRecognizers",
     "Comprehend_20171127.ListKeyPhrasesDetectionJobs",
+    "Comprehend_20171127.ListPiiEntitiesDetectionJobs",
     "Comprehend_20171127.ListSentimentDetectionJobs",
     "Comprehend_20171127.ListTagsForResource",
     "Comprehend_20171127.ListTopicsDetectionJobs",
@@ -143,11 +146,13 @@
     "Comprehend_20171127.StartDominantLanguageDetectionJob",
     "Comprehend_20171127.StartEntitiesDetectionJob",
     "Comprehend_20171127.StartKeyPhrasesDetectionJob",
+    "Comprehend_20171127.StartPiiEntitiesDetectionJob",
     "Comprehend_20171127.StartSentimentDetectionJob",
     "Comprehend_20171127.StartTopicsDetectionJob",
     "Comprehend_20171127.StopDominantLanguageDetectionJob",
     "Comprehend_20171127.StopEntitiesDetectionJob",
     "Comprehend_20171127.StopKeyPhrasesDetectionJob",
+    "Comprehend_20171127.StopPiiEntitiesDetectionJob",
     "Comprehend_20171127.StopSentimentDetectionJob",
     "Comprehend_20171127.StopTrainingDocumentClassifier",
     "Comprehend_20171127.StopTrainingEntityRecognizer",
@@ -155,10 +160,10 @@
     "Comprehend_20171127.UntagResource",
     "Comprehend_20171127.UpdateEndpoint"
   ],
-  "cur:cur": [
+  "cur:cur:404": [
     "AWSOrigamiServiceGatewayService.DescribeReportDefinitions"
   ],
-  "datapipeline:datapipeline": [
+  "datapipeline:datapipeline:404": [
     "DataPipeline.ActivatePipeline",
     "DataPipeline.AddTags",
     "DataPipeline.CreatePipeline",
@@ -179,7 +184,7 @@
     "DataPipeline.SetTaskStatus",
     "DataPipeline.ValidatePipelineDefinition"
   ],
-  "dax:dax": [
+  "dax:dax:404": [
     "AmazonDAXV3.CreateCluster",
     "AmazonDAXV3.CreateParameterGroup",
     "AmazonDAXV3.CreateSubnetGroup",
@@ -202,7 +207,7 @@
     "AmazonDAXV3.UpdateParameterGroup",
     "AmazonDAXV3.UpdateSubnetGroup"
   ],
-  "directconnect:directconnect": [
+  "directconnect:directconnect:404": [
     "OvertureService.AcceptDirectConnectGatewayAssociationProposal",
     "OvertureService.AllocateConnectionOnInterconnect",
     "OvertureService.AllocateHostedConnection",
@@ -260,7 +265,7 @@
     "OvertureService.UpdateLag",
     "OvertureService.UpdateVirtualInterfaceAttributes"
   ],
-  "discovery:discovery": [
+  "discovery:discovery:500": [
     "AWSPoseidonService_V2015_11_01.AssociateConfigurationItemsToApplication",
     "AWSPoseidonService_V2015_11_01.BatchDeleteImportData",
     "AWSPoseidonService_V2015_11_01.CreateApplication",
@@ -287,7 +292,7 @@
     "AWSPoseidonService_V2015_11_01.StopDataCollectionByAgentIds",
     "AWSPoseidonService_V2015_11_01.UpdateApplication"
   ],
-  "forecast:forecast": [
+  "forecast:forecast:404": [
     "AmazonForecast.CreateDataset",
     "AmazonForecast.CreateDatasetGroup",
     "AmazonForecast.CreateDatasetImportJob",
@@ -318,7 +323,10 @@
     "AmazonForecast.UntagResource",
     "AmazonForecast.UpdateDatasetGroup"
   ],
-  "gamelift:gamelift": [
+  "forecast:forecastquery:404": [
+    "AmazonForecastRuntime.QueryForecast"
+  ],
+  "gamelift:gamelift:404": [
     "GameLift.AcceptMatch",
     "GameLift.CreateGameSession",
     "GameLift.CreatePlayerSession",
@@ -355,7 +363,7 @@
     "GameLift.UpdateGameSession",
     "GameLift.ValidateMatchmakingRuleSet"
   ],
-  "health:health": [
+  "health:health:403": [
     "AWSHealth_20160804.DescribeAffectedAccountsForOrganization",
     "AWSHealth_20160804.DescribeAffectedEntitiesForOrganization",
     "AWSHealth_20160804.DescribeEntityAggregates",
@@ -368,20 +376,20 @@
     "AWSHealth_20160804.DisableHealthServiceAccessForOrganization",
     "AWSHealth_20160804.EnableHealthServiceAccessForOrganization"
   ],
-  "identitystore:identitystore": [
+  "identitystore:identitystore:500": [
     "AWSIdentityStore.DescribeGroup",
     "AWSIdentityStore.DescribeUser",
     "AWSIdentityStore.ListGroups",
     "AWSIdentityStore.ListUsers"
   ],
-  "kinesis:kinesis": [
+  "kinesis:kinesis:404": [
     "Kinesis_20131202.ListStreams"
   ],
-  "kinesisanalytics:kinesisanalytics": [
+  "kinesisanalytics:kinesisanalytics:404": [
     "KinesisAnalytics_20150814.ListApplications",
     "KinesisAnalytics_20180523.ListApplications"
   ],
-  "macie:macie": [
+  "macie:macie:404": [
     "MacieService.AssociateMemberAccount",
     "MacieService.AssociateS3Resources",
     "MacieService.DisassociateMemberAccount",
@@ -390,15 +398,15 @@
     "MacieService.ListS3Resources",
     "MacieService.UpdateS3Resources"
   ],
-  "mediastore:mediastore": [
+  "mediastore:mediastore:500": [
     "MediaStore_20170901.ListContainers"
   ],
-  "mgh:migrationhub-config": [
+  "mgh:migrationhub-config:403": [
     "AWSMigrationHubMultiAccountService.CreateHomeRegionControl",
     "AWSMigrationHubMultiAccountService.DescribeHomeRegionControls",
     "AWSMigrationHubMultiAccountService.GetHomeRegion"
   ],
-  "mturk-requester:mturk-requester": [
+  "mturk-requester:mturk-requester:500": [
     "MTurkRequesterServiceV20170117.AcceptQualificationRequest",
     "MTurkRequesterServiceV20170117.ApproveAssignment",
     "MTurkRequesterServiceV20170117.AssociateQualificationWithWorker",
@@ -439,21 +447,21 @@
     "MTurkRequesterServiceV20170117.UpdateNotificationSettings",
     "MTurkRequesterServiceV20170117.UpdateQualificationType"
   ],
-  "opsworks-cm:opsworks-cm": [
+  "opsworks-cm:opsworks-cm:404": [
     "OpsWorksCM_V2016_11_01.DescribeAccountAttributes"
   ],
-  "personalize:personalize": [
+  "personalize:personalize:404": [
     "AmazonPersonalize.ListDatasetGroups",
     "AmazonPersonalize.ListRecipes",
     "AmazonPersonalize.ListSchemas"
   ],
-  "redshift-data:redshift-data": [
+  "redshift-data:redshift-data:404": [
     "RedshiftData.CancelStatement",
     "RedshiftData.DescribeStatement",
     "RedshiftData.GetStatementResult",
     "RedshiftData.ListStatements"
   ],
-  "route53domains:route53domains": [
+  "route53domains:route53domains:403": [
     "Route53Domains_v20140515.AcceptDomainTransferFromAnotherAwsAccount",
     "Route53Domains_v20140515.CancelDomainTransferToAnotherAwsAccount",
     "Route53Domains_v20140515.CheckDomainAvailability",
@@ -483,7 +491,7 @@
     "Route53Domains_v20140515.UpdateTagsForDomain",
     "Route53Domains_v20140515.ViewBilling"
   ],
-  "route53resolver:route53resolver": [
+  "route53resolver:route53resolver:404": [
     "Route53Resolver.AssociateResolverQueryLogConfig",
     "Route53Resolver.CreateResolverQueryLogConfig",
     "Route53Resolver.DeleteResolverQueryLogConfig",
@@ -498,7 +506,7 @@
     "Route53Resolver.ListResolverRules",
     "Route53Resolver.PutResolverQueryLogConfigPolicy"
   ],
-  "sagemaker:api.sagemaker": [
+  "sagemaker:api.sagemaker:404": [
     "SageMaker.GetSearchSuggestions",
     "SageMaker.ListAlgorithms",
     "SageMaker.ListAutoMLJobs",
@@ -512,7 +520,6 @@
     "SageMaker.ListHumanTaskUis",
     "SageMaker.ListHyperParameterTuningJobs",
     "SageMaker.ListLabelingJobs",
-    "SageMaker.ListModelPackages",
     "SageMaker.ListModels",
     "SageMaker.ListMonitoringExecutions",
     "SageMaker.ListMonitoringSchedules",
@@ -527,7 +534,7 @@
     "SageMaker.RenderUiTemplate",
     "SageMaker.Search"
   ],
-  "secretsmanager:secretsmanager": [
+  "secretsmanager:secretsmanager:404": [
     "secretsmanager.CancelRotateSecret",
     "secretsmanager.CreateSecret",
     "secretsmanager.DeleteResourcePolicy",
@@ -548,7 +555,7 @@
     "secretsmanager.UpdateSecretVersionStage",
     "secretsmanager.ValidateResourcePolicy"
   ],
-  "shield:shield": [
+  "shield:shield:404": [
     "AWSShield_20160616.AssociateDRTLogBucket",
     "AWSShield_20160616.AssociateProactiveEngagementDetails",
     "AWSShield_20160616.CreateSubscription",
@@ -566,7 +573,7 @@
     "AWSShield_20160616.UpdateEmergencyContactSettings",
     "AWSShield_20160616.UpdateSubscription"
   ],
-  "sms:sms": [
+  "sms:sms:404": [
     "AWSServerMigrationService_V2016_10_24.CreateApp",
     "AWSServerMigrationService_V2016_10_24.CreateReplicationJob",
     "AWSServerMigrationService_V2016_10_24.DeleteApp",
@@ -603,16 +610,18 @@
     "AWSServerMigrationService_V2016_10_24.UpdateApp",
     "AWSServerMigrationService_V2016_10_24.UpdateReplicationJob"
   ],
-  "snowball:snowball": [
+  "snowball:snowball:404": [
     "AWSIESnowballJobManagementService.CancelCluster",
     "AWSIESnowballJobManagementService.CancelJob",
     "AWSIESnowballJobManagementService.CreateAddress",
     "AWSIESnowballJobManagementService.CreateCluster",
     "AWSIESnowballJobManagementService.CreateJob",
+    "AWSIESnowballJobManagementService.CreateReturnShippingLabel",
     "AWSIESnowballJobManagementService.DescribeAddress",
     "AWSIESnowballJobManagementService.DescribeAddresses",
     "AWSIESnowballJobManagementService.DescribeCluster",
     "AWSIESnowballJobManagementService.DescribeJob",
+    "AWSIESnowballJobManagementService.DescribeReturnShippingLabel",
     "AWSIESnowballJobManagementService.GetJobManifest",
     "AWSIESnowballJobManagementService.GetJobUnlockCode",
     "AWSIESnowballJobManagementService.GetSnowballUsage",
@@ -622,9 +631,10 @@
     "AWSIESnowballJobManagementService.ListCompatibleImages",
     "AWSIESnowballJobManagementService.ListJobs",
     "AWSIESnowballJobManagementService.UpdateCluster",
-    "AWSIESnowballJobManagementService.UpdateJob"
+    "AWSIESnowballJobManagementService.UpdateJob",
+    "AWSIESnowballJobManagementService.UpdateJobShipmentState"
   ],
-  "support:support": [
+  "support:support:403": [
     "AWSSupport_20130415.AddAttachmentsToSet",
     "AWSSupport_20130415.AddCommunicationToCase",
     "AWSSupport_20130415.CreateCase",
@@ -640,7 +650,7 @@
     "AWSSupport_20130415.RefreshTrustedAdvisorCheck",
     "AWSSupport_20130415.ResolveCase"
   ],
-  "tagging:tagging": [
+  "tagging:tagging:500": [
     "ResourceGroupsTaggingAPI_20170126.DescribeReportCreation",
     "ResourceGroupsTaggingAPI_20170126.GetComplianceSummary",
     "ResourceGroupsTaggingAPI_20170126.GetResources",
@@ -650,7 +660,7 @@
     "ResourceGroupsTaggingAPI_20170126.TagResources",
     "ResourceGroupsTaggingAPI_20170126.UntagResources"
   ],
-  "textract:textract": [
+  "textract:textract:404": [
     "Textract.AnalyzeDocument",
     "Textract.DetectDocumentText",
     "Textract.GetDocumentAnalysis",
@@ -658,7 +668,7 @@
     "Textract.StartDocumentAnalysis",
     "Textract.StartDocumentTextDetection"
   ],
-  "translate:translate": [
+  "translate:translate:500": [
     "AWSShineFrontendService_20170701.DeleteTerminology",
     "AWSShineFrontendService_20170701.DescribeTextTranslationJob",
     "AWSShineFrontendService_20170701.GetTerminology",
@@ -669,22 +679,26 @@
     "AWSShineFrontendService_20170701.StopTextTranslationJob",
     "AWSShineFrontendService_20170701.TranslateText"
   ],
-  "workmail:workmail": [
+  "workmail:workmail:403": [
     "WorkMailService.AssociateDelegateToResource",
     "WorkMailService.AssociateMemberToGroup",
+    "WorkMailService.CancelMailboxExportJob",
     "WorkMailService.CreateAlias",
     "WorkMailService.CreateGroup",
+    "WorkMailService.CreateOrganization",
     "WorkMailService.CreateResource",
     "WorkMailService.CreateUser",
     "WorkMailService.DeleteAccessControlRule",
     "WorkMailService.DeleteAlias",
     "WorkMailService.DeleteGroup",
     "WorkMailService.DeleteMailboxPermissions",
+    "WorkMailService.DeleteOrganization",
     "WorkMailService.DeleteResource",
     "WorkMailService.DeleteRetentionPolicy",
     "WorkMailService.DeleteUser",
     "WorkMailService.DeregisterFromWorkMail",
     "WorkMailService.DescribeGroup",
+    "WorkMailService.DescribeMailboxExportJob",
     "WorkMailService.DescribeOrganization",
     "WorkMailService.DescribeResource",
     "WorkMailService.DescribeUser",
@@ -697,6 +711,7 @@
     "WorkMailService.ListAliases",
     "WorkMailService.ListGroupMembers",
     "WorkMailService.ListGroups",
+    "WorkMailService.ListMailboxExportJobs",
     "WorkMailService.ListMailboxPermissions",
     "WorkMailService.ListOrganizations",
     "WorkMailService.ListResourceDelegates",
@@ -708,6 +723,7 @@
     "WorkMailService.PutRetentionPolicy",
     "WorkMailService.RegisterToWorkMail",
     "WorkMailService.ResetPassword",
+    "WorkMailService.StartMailboxExportJob",
     "WorkMailService.TagResource",
     "WorkMailService.UntagResource",
     "WorkMailService.UpdateMailboxQuota",
