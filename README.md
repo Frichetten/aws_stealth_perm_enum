@@ -47,7 +47,7 @@ As of 10/16/2020 there exists a vulnerability in the AWS API that allows you to 
 
 Note: not all API calls for these services are vulnerable. For a complete list of every vulnerable API call please see /enum_all_api_calls/final-vuln-api-list.txt.  
 
-Please see [this](frichetten.com/blog/aws-api-enum-vuln/) blog post for more details.
+Please see [this](https://frichetten.com/blog/aws-api-enum-vuln/) blog post for more details.
 
 ## Steps to Reproduce
 The vulnerability only affects AWS services that use POST requests and the X-Amz-Target header (Each AWS API has different implementations. Some use GET requests, some POST to an API endpoint, etc). The majority of these services require the Content-Type header to be 'application/x-amz-json-1.1'. In the majority of instances, sending 'application/x-amz-json-1.0' will provide you with an error; typically 404 - 'UnknownOperationException' or 500 - 'InternalFailure'.
