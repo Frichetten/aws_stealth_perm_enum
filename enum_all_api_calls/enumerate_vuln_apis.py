@@ -5,6 +5,7 @@ import sys, os, base64, datetime, hashlib, hmac
 import requests # pip install requests
 import json
 import time
+import hashlib
 
 ## This script will enumerate all vulnerable AWS API calls
 
@@ -107,8 +108,14 @@ for filename in os.listdir('aws-sdk-js/apis/'):
                 time.sleep(15)
                 count = 0
 
-            if r.status_code == 403 and "<AccessDeniedException/>" not in r.text:
-                print(endpoint_prefix + ':' + target_prefix + '.' + op + ' '+service)
-            elif r.status_code == 404 or r.status_code == 500:
-                None
+            #if r.status_code == 403 and "<AccessDeniedException/>" not in r.text:
+            #if r.status_code == 403:
+            #    print(endpoint_prefix + ':' + target_prefix + '.' + op + ' '+service)
+            #    if "<Message>User:" not in r.text:
+            #        print(r.text)
+            #elif r.status_code == 404 or r.status_code == 500:
+            #    None
+            
+            # Used to get the initial list for differentiate.py
+            print(str(r.status_code) + ":" + endpoint_prefix + ":" + target_prefix + '.' + op + ':' + hashlib.sha1(r.text.encode("utf-8")).hexdigest() + ":" + service)
 

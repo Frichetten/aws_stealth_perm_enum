@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 import json, pprint
 
-output = {}
-with open('final-vuln-api-list.txt','r') as r:
-    for line in r:
-        split = line.split(" ")
-        # I'm aware how bad this code is, mistakes were made. It just needs to run once
-        if split[1][:-1]+":"+split[0][:split[0].find(":")] not in output.keys():
-            output[split[1][:-1]+":"+split[0][:split[0].find(":")]] = []
+# This tool is responsible for converting differentiate.py output into a json format
+# Which can be interpretted by the proof_of_concept.py
 
-        output[split[1][:-1]+":"+split[0][:split[0].find(":")]].append(split[0][split[0].find(":")+1:])
+output = {}
+with open('differentiate_output.txt','r') as r:
+    for line in r:
+        line_parts = line[:-1].split(":")
+        key = line_parts[4] + ":" + line_parts[1] + ":" + line_parts[0]
+        if key not in output.keys():
+            output[key] = [line_parts[2]]
+        else:
+            output[key].append(line_parts[2])
             
 pp = pprint.PrettyPrinter(indent=3)
 pp.pprint(output)
