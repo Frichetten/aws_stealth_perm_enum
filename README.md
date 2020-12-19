@@ -17,7 +17,6 @@ As of 10/16/2020 there exists a vulnerability in the AWS API that allows you to 
 * cur
 * datapipeline
 * dax
-* directconnect
 * discovery
 * forecast
 * gamelift
@@ -44,6 +43,8 @@ As of 10/16/2020 there exists a vulnerability in the AWS API that allows you to 
 * textract
 * translate
 * workmail
+
+Update 12/19/2020: DirectConnect no longer appears to be vulnerable to this issue.
 
 Note: not all API calls for these services are vulnerable. For a complete list of every vulnerable API call please see /enum_all_api_calls/final-vuln-api-list.txt.  
 
