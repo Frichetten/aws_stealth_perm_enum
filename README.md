@@ -19,7 +19,6 @@ As of 10/16/2020 there exists a vulnerability in the AWS API that allows you to 
 * dax
 * discovery
 * forecast
-* gamelift
 * health
 * identitystore
 * kinesis
@@ -29,7 +28,6 @@ As of 10/16/2020 there exists a vulnerability in the AWS API that allows you to 
 * mgh
 * mturk-requester
 * opsworks-cm
-* personalize
 * redshift-data
 * route53domains
 * route53resolver
@@ -45,6 +43,8 @@ As of 10/16/2020 there exists a vulnerability in the AWS API that allows you to 
 * workmail
 
 Update 12/19/2020: DirectConnect no longer appears to be vulnerable to this issue.
+
+Update 4/21/2020: GameLift and Personalize no longer appear to be vulnerable to this issue, and broke a previous proof of concept.
 
 Note: not all API calls for these services are vulnerable. For a complete list of every vulnerable API call please see /enum_all_api_calls/final-vuln-api-list.txt.  
 
