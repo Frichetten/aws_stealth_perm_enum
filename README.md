@@ -2,7 +2,7 @@
 Research on the enumeration of IAM permissions without logging to CloudTrail
 
 # Update 6/2/2021
-All good things must come to an end :( This technique no longer works in it's current form. That repo will stay around as a historical artifact.
+All good things must come to an end :( This technique no longer works in its current form. This repo will stay around as a historical artifact.
 
 ## tl;dr
 As of 10/16/2020 there exists a vulnerability in the AWS API that allows you to enumerate some IAM permissions for a role without logging to CloudTrail. This capability is due to improper handling of the Content-Type header which is important for the AWS API. It currently affects the following AWS services.  
