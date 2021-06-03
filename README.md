@@ -1,8 +1,8 @@
 # aws_stealth_perm_enum
 Research on the enumeration of IAM permissions without logging to CloudTrail
 
-# Update 4/24/2021
-To all the Amazonians checking out this repo, hi! Due to all the traffic on this page and the blog about it, it is abundantly clear that this technique is being cracked down on by AWS, and at some point in the near future will no longer be functional. At least, in it's current state. I was originally planning on updating this repo and removing services which have mitigated the enumeration issue, however that has proved to be a game of wack-a-mole I don't really want to spend time on :P I'm confident in the next few months this technique will no longer be usable, and I will put a more formal disclaimer in the README at that time. In the interest of preserving/documenting this bug, I will no longer update the list of vulnerable actions or the proof of concept script (even though the script is broken). 
+# Update 6/2/2021
+All good things must come to an end :( This technique no longer works in it's current form. That repo will stay around as a historical artifact.
 
 ## tl;dr
 As of 10/16/2020 there exists a vulnerability in the AWS API that allows you to enumerate some IAM permissions for a role without logging to CloudTrail. This capability is due to improper handling of the Content-Type header which is important for the AWS API. It currently affects the following AWS services.  
